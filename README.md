@@ -3,12 +3,12 @@ A little react hacking.
 Install dependencies
 
 ```
-$ npm install -g react-tools
+$ npm install
 $ bower install
 ```
 
 Build app
 
 ```
-$ jsx src/ build/
+$ gulp
 ```
