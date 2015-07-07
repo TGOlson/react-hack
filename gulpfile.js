@@ -26,6 +26,7 @@ gulp.task('build:compile:components', function() {
     .pipe(gulp.dest('./build/js'));
 });
 
+
 function logBundleError(err) {
   console.log('Error bundling components: ', err.message);
 }
@@ -41,7 +42,7 @@ gulp.task('test:units', shell.task('jasmine'));
 
 
 gulp.task('test:tdd', ['test:units'], function() {
-  gulp.watch(COMPONENTS_SPEC_PATH, ['test:units'])
+  gulp.watch([COMPONENTS_PATH, COMPONENTS_SPEC_PATH], ['test:units'])
 });
 
 

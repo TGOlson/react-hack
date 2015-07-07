@@ -1,23 +1,24 @@
 import React from 'react/addons';
 import R     from 'ramda';
 
+export default class Counter extends React.Component {
+  constructor() {
+    super();
 
-export default React.createClass({
-  getInitialState: R.always({count: 0}),
+    this.state = {count: 0};
 
-  incCount: function() {
-    this.setState({count: this.state.count + 1})
-  },
+    this.incCount   = () => this.modifyCount(R.add(1));
+    this.decCount   = () => this.modifyCount(R.add(-1));
+    this.resetCount = () => this.modifyCount(R.always(0));
 
-  decCount: function() {
-    this.setState({count: this.state.count - 1})
-  },
+    // this.setCount = R.compose(this.setState, R.createMapEntry('count'));
+    this.setCount = (x) => this.setState({count: x});
 
-  resetCount: function() {
-    this.setState(this.getInitialState())
-  },
+    // this.modifyCount = R.compose(this.setCount, R.apply(R.__, [this.state.count]));
+    this.modifyCount = (f) => this.setCount(f(this.state.count));
+  }
 
-  render: function() {
+  render() {
     return (
       <div>
         <p>Count: {this.state.count}</p>
@@ -27,4 +28,4 @@ export default React.createClass({
       </div>
     );
   }
-});
+}
