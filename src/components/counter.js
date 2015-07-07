@@ -1,4 +1,8 @@
-var Counter = React.createClass({
+import React from 'react/addons';
+import R     from 'ramda';
+
+
+export default React.createClass({
   getInitialState: R.always({count: 0}),
 
   incCount: function() {
@@ -24,5 +28,3 @@ var Counter = React.createClass({
     );
   }
 });
-
-React.render(<Counter />, document.getElementById('main-content'));

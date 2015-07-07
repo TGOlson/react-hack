@@ -1,10 +1,9 @@
-A little react hacking.
+Spike on potential setup for a React app, including testing and the build process.
 
 Install dependencies
 
 ```
 $ npm install
-$ bower install
 ```
 
 Build app
@@ -12,3 +11,11 @@ Build app
 ```
 $ gulp
 ```
+
+See stuff
+
+```
+$ npm start
+```
+
+Go to `localhost:8000/build`
